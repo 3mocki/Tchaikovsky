@@ -14,20 +14,13 @@ if __name__ == '__main__':
         dca = DCA_class()
         dca.eId = sir.ssn
         dca.init()
-        init_time = int(time.time())
         while True:
-            start = time.time()
-            init_time += 10
+
             print("-----------Generate RAD-----------")
             rad = RAD_class()
             rad.eId = dca.cId
             print("----------------------------------")
-            print("Real Unixtime : " + str(init_time))
-            rad.init()
-            end = time.time()
-            communicating = end - start
-            timegap = 10 - communicating
-            time.sleep(timegap)
+            time.sleep(10)
 
 
     except KeyboardInterrupt:
