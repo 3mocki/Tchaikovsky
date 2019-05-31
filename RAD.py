@@ -93,13 +93,13 @@ class RAD_class:
             return RES_FAILED
 
     def UnpackMsg(self):
-        if self.json_response['payload']['RRF'] == 1:
-            if self.json_response['payload']['CRR'] == 1:
+        if self.json_response['payload']['retransReqFlg'] == 1:
+            if self.json_response['payload']['continuityOfRetransReq'] == 1:
                 print("Operating Retransmission")
             else:
-                print(self.json_response['payload']['LUT'])
+                print(self.json_response['payload']['listOfUnsuccessfulTs'])
         else:
-            quit()
+            pass
 
     def stateChange(self):
         self.currentState_4 = 'CID_INFORMED_STATE'
