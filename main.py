@@ -22,7 +22,6 @@ if __name__ == '__main__':
             print("----------------------------------")
             time.sleep(10)
 
-
     except KeyboardInterrupt:
         # [Ctrl + C] or [Ctrl + Z]
         print("-----Quit Communicating-----")

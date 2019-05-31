@@ -21,7 +21,7 @@ ae_zero = [283, 389, 269, 275]
 sens = [0.228, 0.399, 0.267, 0.318]
 
 # Follow the 803-05
-temp_n = [[0.8, 0.8, 1, 1.2, 1.6, 1.8, 1.9, 2.5, 3.6],
+temp_n = [[0.2, 0.2, 0.2, 0.2, 0.7, 1, 1.3, 2.1, 3.5],
           [0.1, 0.1, 0.2, 0.3, 0.7, 1, 1.7, 3, 4],
           [1, 1, 1, 1, -0.2, -0.9, -1.5, -1.5, -1.5],
           [0, 0, 0, 0, 0, 0, 5, 25, 45]]
@@ -128,7 +128,7 @@ def collect_Data():
             if x == 1:
                 temp = temp_choice(temp_result, x)
                 # calculating ppb & ppm
-                ppb_value = ((we_value - we_zero[x - 1]) - temp * (ae_value - ae_zero[x - 1])) / \
+                ppb_value = ((we_value - we_zero[x - 1]) - 1 - temp * (ae_value - ae_zero[x - 1])) / \
                             sens[x - 1]
                 no2 = round(ppb_value, 3)
                 data[2] = no2
