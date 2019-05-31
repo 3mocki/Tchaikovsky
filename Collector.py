@@ -212,6 +212,9 @@ if __name__ == '__main__':
 
             collect_Data()
 
+            print('CSVR Number:' + str(data[2]))
+            print('Data Number:' + str(data[3]))
+            print('CSVR Number:' + str(data[5]))
             print('Data Number:' + str(data[8]))
             print('CSVR Number:' + str(data[9]))
 
