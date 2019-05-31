@@ -24,7 +24,7 @@ sens = [0.228, 0.399, 0.267, 0.318]
 temp_n = [[0.8, 0.8, 1, 1.2, 1.6, 1.8, 1.9, 2.5, 3.6],
           [1, 1.2, 1.2, 1.6, 1.7, 2, 2.1, 3.4, 4.6],
           [1, 1, 1, 1, -0.2, -0.9, -1.5, -1.5, -1.5],
-          [1.3, 1.3, 1.3, 1.2, 0.9, 0.4, 0.4, 0.4, 0.4]]
+          [0, 0, 0, 0, 0, 0, 5, 25, 45]]
 
 
 # pin number initialization
@@ -155,7 +155,7 @@ def collect_Data():
             elif x == 4:
                 temp = temp_choice(temp_result, x)
                 # calculating ppb & ppm
-                ppb_value = ((we_value - we_zero[x - 1])) - temp * (ae_value - ae_zero[x - 1]) / \
+                ppb_value = ((we_value - we_zero[x - 1])) - 58 - temp / \
                             sens[x - 1]
                 so2 = round(ppb_value, 3)
                 data[5] = so2
