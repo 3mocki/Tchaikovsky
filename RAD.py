@@ -10,6 +10,7 @@ class RAD_class:
     currentState_4 = CID_INFORMED_STATE
     sspRadTrnRetries = 0
     row = [[], [], [], [], [], [], [], [], [], []]
+    lost = []
 
     # msgHeader[0]
     msgtype = SSP_RADTRN
@@ -94,10 +95,28 @@ class RAD_class:
 
     def UnpackMsg(self):
         if self.json_response['payload']['retransReqFlg'] == 1:
-            if self.json_response['payload']['continuityOfRetransReq'] == 1:
-                print("Operating Retransmission")
-            else:
-                print(self.json_response['payload']['listOfUnsuccessfulTs'])
+            for i in range():
+                self.lost[i] = self.json_response['payload']['listOfUnsuccessfulTs'][i]
+            for x in air_sender_2():
+                if self.lost[x] == air_sender_2[x][0]:
+                    air_sender_3[x][0] = self.lost[x]
+                    air_sender_3[x][1] = air_sender_2[x][1]
+                    air_sender_3[x][2] = air_sender_2[x][2]
+                    air_sender_3[x][3] = air_sender_2[x][3]
+                    air_sender_3[x][4] = air_sender_2[x][4]
+                    air_sender_3[x][5] = air_sender_2[x][5]
+                    air_sender_3[x][6] = air_sender_2[x][6]
+                    air_sender_3[x][7] = air_sender_2[x][7]
+                    air_sender_3[x][8] = air_sender_2[x][8]
+                    air_sender_3[x][9] = air_sender_2[x][9]
+                    air_sender_3[x][10] = air_sender_2[x][10]
+                    air_sender_3[x][11] = air_sender_2[x][11]
+                    air_sender_3[x][12] = air_sender_2[x][12]
+                    air_sender_3[x][13] = air_sender_2[x][13]
+                    air_sender_3[x][14] = air_sender_2[x][14]
+                    air_sender_3[x][15] = air_sender_2[x][15]
+                    air_sender_3[x][16] = air_sender_2[x][16]
+                    air_sender_3[x][17] = air_sender_2[x][17]
         else:
             pass
 
@@ -136,23 +155,6 @@ class RAD_class:
             air_sender_2[idx][15] = int(line[15])
             air_sender_2[idx][16] = int(line[16])
             air_sender_2[idx][17] = int(line[17])
-
-        # duplicate past data from air_sender_2
-        for idx, line in enumerate(rad_data):
-            air_sender_3[idx][0] = int(line[0])
-            air_sender_3[idx][5] = float(line[5])
-            air_sender_3[idx][6] = float(line[6])
-            air_sender_3[idx][7] = float(line[7])
-            air_sender_3[idx][8] = float(line[8])
-            air_sender_3[idx][9] = float(line[9])
-            air_sender_3[idx][10] = float(line[10])
-            air_sender_3[idx][11] = float(line[11])
-            air_sender_3[idx][12] = int(line[12])
-            air_sender_3[idx][13] = int(line[13])
-            air_sender_3[idx][14] = int(line[14])
-            air_sender_3[idx][15] = int(line[15])
-            air_sender_3[idx][16] = int(line[16])
-            air_sender_3[idx][17] = int(line[17])
 
         f.close()
 
