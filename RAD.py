@@ -93,19 +93,13 @@ class RAD_class:
             return RES_FAILED
 
     def UnpackMsg(self):
-        if self.json_response['payload']['SRF'] == 1:
-            if self.json_response['payload']['CSR'] == 1:
-                print("Continuity of Successful Reception")
+        if self.json_response['payload']['RRF'] == 1:
+            if self.json_response['payload']['CRR'] == 1:
+                print("Operating Retransmission")
             else:
-                print(self.json_response['payload']['LST'])
+                print(self.json_response['payload']['LUT'])
         else:
-            if self.json_response['payload']['RRF'] == 1:
-                if self.json_response['payload']['CRR'] == 1:
-                    print("Continuity of Retransmission Request")
-                else:
-                    print(self.json_response['payload']['LUT'])
-            else:
-                quit()
+            quit()
 
     def stateChange(self):
         self.currentState_4 = 'CID_INFORMED_STATE'
@@ -174,4 +168,4 @@ class RAD_class:
         self.fnPackSspRadTrn()
         self.fnSendSspRadTrn()
         self.fnReceiveMsg()
-        # self.UnpackMsg()
+        self.UnpackMsg()
