@@ -212,12 +212,6 @@ if __name__ == '__main__':
 
             collect_Data()
 
-            print('CSVR Number:' + str(data[2]))
-            print('Data Number:' + str(data[3]))
-            print('CSVR Number:' + str(data[5]))
-            print('Data Number:' + str(data[8]))
-            print('CSVR Number:' + str(data[9]))
-
             av1.insertData(1, 2, 3, 4, 5)  # no2, o3, so2
             #av1.insertData(data[2], data[3], data[5], data[8], data[9])  # no2, o3, so2
             av2.insertData(data[3], data[4], data[8], data[9])  # o3, co
