@@ -218,7 +218,8 @@ if __name__ == '__main__':
             print('Data Number:' + str(data[8]))
             print('CSVR Number:' + str(data[9]))
 
-            av1.insertData(data[2], data[3], data[5], data[8], data[9])  # no2, o3, so2
+            av1.insertData(1, 2, 3, 4, 5)  # no2, o3, so2
+            #av1.insertData(data[2], data[3], data[5], data[8], data[9])  # no2, o3, so2
             av2.insertData(data[3], data[4], data[8], data[9])  # o3, co
             av3.insertData(data[6], data[7], data[8], data[9])  # pm10, pm25
 
