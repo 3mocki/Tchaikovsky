@@ -194,9 +194,9 @@ def save_to_DS(r, z):
 if __name__ == '__main__':
     print("=========Operating Sensor=========")
 
-    av1 = Average_1
-    av2 = Average_8
-    av3 = Average_24
+    av1 = Average_1()
+    av2 = Average_8()
+    av3 = Average_24()
 
     init_time = int(time.time())
     try:
@@ -212,8 +212,7 @@ if __name__ == '__main__':
 
             collect_Data()
 
-            av1.insertData(1, 2, 3, 4, 5)  # no2, o3, so2
-            #av1.insertData(data[2], data[3], data[5], data[8], data[9])  # no2, o3, so2
+            av1.insertData(data[2], data[3], data[5], data[8], data[9])  # no2, o3, so2
             av2.insertData(data[3], data[4], data[8], data[9])  # o3, co
             av3.insertData(data[6], data[7], data[8], data[9])  # pm10, pm25
 
