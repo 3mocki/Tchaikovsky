@@ -60,7 +60,7 @@ class RAD_class:
 
     def fnReceiveMsg(self):
         global rt
-        if rt > 5:
+        if rt > 10:
             print("Response time is exceeded 5 sec")
             self.sspRadTrnRetries += 1
             if self.sspRadTrnRetries == 5:
